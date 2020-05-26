@@ -23,8 +23,11 @@
     ]
   },
   "description": "TBD",
+  "exports": {
+    ".": "./distributable/index.js",
+    "./install.js": "./distributable/install.js"
+  },
   "license": "GPL-3.0+",
-  "main": "distributable/index.js",
   "name": "@virtualpatterns/mablung-source-map-support",
   "repository": {
     "type": "git",

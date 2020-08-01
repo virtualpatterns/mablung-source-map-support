@@ -1,9 +1,8 @@
 {
-  "retainLines": true,
   "plugins": [
     "@babel/plugin-syntax-import-meta",
     [
-      "@virtualpatterns/mablung-babel-plugin-replace",
+      "@virtualpatterns/mablung-babel-plugin-replace-identifier",
       {
         "rule": [
           {
@@ -28,5 +27,6 @@
     ]
   ],
   "presets": [],
+  "retainLines": true,
   "sourceType": "module"
 }

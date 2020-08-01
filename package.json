@@ -25,7 +25,7 @@
   "description": "TBD",
   "exports": {
     ".": "./distributable/index.js",
-    "./install.js": "./distributable/install.js"
+    "./install": "./distributable/install.js"
   },
   "license": "GPL-3.0+",
   "name": "@virtualpatterns/mablung-source-map-support",

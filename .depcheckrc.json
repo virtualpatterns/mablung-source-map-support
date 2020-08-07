@@ -1,11 +1,10 @@
 {
   "ignores": [
-    "@babel/*",
-    "@virtualpatterns/mablung-babel-plugin-replace-identifier"
+    "@babel/plugin-syntax-import-meta",
+    "source-map-support"
   ],
   "parsers": {
-    "*.cjs": [ "es6" ],
-    "*.js": [ "es6" ]
+    "*.js": [ "es7" ]
   },
   "specials": [
     "bin",

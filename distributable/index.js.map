@@ -1,1 +1,0 @@
-{"version":3,"sources":["../source/index.js"],"names":["SourceMapSupport"],"mappings":"AAAA,OAAOA,gBAAP,MAA6B,oBAA7B;;AAEA,SAASA,gBAAT","sourcesContent":["import SourceMapSupport from 'source-map-support'\n\nexport { SourceMapSupport }\n"],"file":"index.js"}

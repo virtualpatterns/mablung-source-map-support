@@ -1,6 +1,6 @@
 {
   "ignores": [
-    "@babel/plugin-syntax-import-meta",
+    "@babel/preset-env",
     "source-map-support"
   ],
   "parsers": {

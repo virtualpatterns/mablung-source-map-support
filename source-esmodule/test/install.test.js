@@ -15,7 +15,7 @@ Test('Error(string)', (test) => {
   test.log(`'${Path.relative('', errorPath)}' on line ${errorLineNumber}, column ${errorColumnNumber}`)
 
   let filePath = URL.fileURLToPath(import.meta.url)
-  filePath = filePath.replace(/distributable-esmodule/i, 'source-esmodule')
+  filePath = filePath.replace(/release-esmodule/i, 'source-esmodule')
 
   test.is(errorPath, filePath)
 

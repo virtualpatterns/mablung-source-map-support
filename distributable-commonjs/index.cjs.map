@@ -1,1 +1,0 @@
-{"version":3,"sources":["../source-commonjs/index.cjs"],"names":[],"mappings":";;;;;;;;;;;;AAAA","sourcesContent":["import SourceMapSupport from 'source-map-support'\n\nexport { SourceMapSupport }\n"],"file":"index.cjs"}

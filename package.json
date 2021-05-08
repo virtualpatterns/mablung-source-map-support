@@ -3,27 +3,25 @@
   "ava": {
     "failFast": true,
     "files": [
-      "release-commonjs/test/**/*.test.*",
-      "release-esmodule/test/**/*.test.*"
+      "release/commonjs/test/**/*.test.*",
+      "release/esmodule/test/**/*.test.*"
     ],
     "nodeArguments": [
       "--no-warnings",
       "--unhandled-rejections=strict"
     ],
     "require": [
-      "./release-esmodule/install.js"
+      "./release/esmodule/install.js"
     ],
     "verbose": true
   },
   "c8": {
     "all": true,
     "exclude": [
-      "release-commonjs/sandbox",
-      "release-commonjs/test",
-      "release-esmodule/sandbox",
-      "release-esmodule/test",
-      "source/sandbox",
-      "source/test"
+      "release/commonjs/test",
+      "release/esmodule/test",
+      "source/commonjs/test",
+      "source/esmodule/test"
     ],
     "reporter": [
       "html"
@@ -32,46 +30,26 @@
   "description": "TBD",
   "exports": {
     ".": {
-      "import": "./release-esmodule/index.js",
-      "require": "./release-commonjs/index.cjs"
+      "import": "./release/esmodule/index.js",
+      "require": "./release/commonjs/index.cjs"
     },
     "./install": {
-      "import": "./release-esmodule/install.js",
-      "require": "./release-commonjs/install.cjs"
+      "import": "./release/esmodule/install.js",
+      "require": "./release/commonjs/install.cjs"
     }
   },
   "license": "GPL-3.0+",
-  "main": "release-commonjs/index.cjs",
+  "main": "release/commonjs/index.cjs",
   "name": "@virtualpatterns/mablung-source-map-support",
   "repository": {
     "type": "git",
     "url": "https://github.com/virtualpatterns/mablung-source-map-support"
   },
   "scripts": {
-    "refresh": "rm -Rf node_modules package-lock.json && npm install",
-    "upgrade:10": "npm-check-updates --upgrade",
-    "upgrade:20": "shx rm -f package-lock.json",
-    "upgrade:30": "npm install",
-    "upgrade": "run-s --silent upgrade:*",
-    "clean:10": "shx rm -Rf coverage release-commonjs release-esmodule",
-    "clean": "run-s --silent clean:*",
-    "lint:10": "eslint --ext .cjs --ignore-path .gitignore source-commonjs",
-    "lint:20": "eslint --ext .js  --ignore-path .gitignore source-esmodule",
-    "lint:30": "depcheck",
-    "lint": "run-s --silent lint:*",
-    "build:10": "babel source-commonjs --copy-files --extensions .cjs --keep-file-extension --out-dir release-commonjs --source-maps",
-    "build:20": "babel source-esmodule --copy-files --extensions .js  --keep-file-extension --out-dir release-esmodule --source-maps",
-    "build": "run-s --silent clean lint build:*",
-    "test:10": "c8 ava",
-    "test": "run-s --silent build \"test:10 {@}\" --",
-    "run:10": "node --no-warnings --unhandled-rejections=strict",
-    "run": "run-s --silent build \"run:10 {@}\" --",
-    "pre:push:10": "git add coverage release-commonjs release-esmodule",
-    "pre:push:20": "git commit --message=\"post-test\"",
-    "pre:push": "run-s --silent test pre:push:*",
-    "push:10": "npm version prerelease",
-    "push:20": "git push origin master",
-    "push": "run-s --silent pre:push push:*"
+    "test:10": "make test",
+    "test": "run-s --silent \"test:10 argument='{@}'\" --",
+    "run:10": "make run",
+    "run": "run-s --silent \"run:10 argument='{@}'\" --"
   },
   "type": "module",
   "version": "0.0.2-23",

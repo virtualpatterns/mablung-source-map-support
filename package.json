@@ -52,7 +52,7 @@
     "run": "run-s --silent \"run:10 argument='{@}'\" --"
   },
   "type": "module",
-  "version": "0.0.2-23",
+  "version": "0.0.2-24",
   "devDependencies": {
     "@babel/cli": "^7.13.16",
     "@babel/core": "^7.14.0",

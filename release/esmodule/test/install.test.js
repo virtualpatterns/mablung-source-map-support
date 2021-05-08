@@ -2,7 +2,7 @@ import Path from 'path';
 import Test from 'ava';
 import URL from 'url';
 
-Test('Error(string)', test => {
+Test('Error(string)', (test) => {
 
   let error = new Error('error');
 

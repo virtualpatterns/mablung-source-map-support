@@ -23,49 +23,49 @@
 # "push:20": "git push origin master",
 # "push": "run-s --silent pre:push push:*"
 
-sourcePath :=	$(filter-out %/.eslintrc.json, \
-							$(filter-out %/.babelrc.json, \
-								$(shell find source -type f)))
-
-releasePath :=	$(sort \
-									$(patsubst source/%, release/%, \
-										$(sourcePath)))
-
 .PHONY: default debug refresh upgrade build clean run test push
 
 default: build
 
 debug:
-	@echo \"$(shell date)\"
+	@npx shx echo $(releasePath)
 
 refresh:
-	@rm -rf node_modules package-lock.json
+	@-npx shx rm -rf node_modules package-lock.json
 	@npm install
 
 upgrade:
-	@npm-check-updates --upgrade
-	@shx rm -f package-lock.json
+	@npx npm-check-updates --upgrade
+	@npx shx rm -f package-lock.json
 	@npm install
 
+sourcePath :=	$(filter-out %/.eslintrc.json, \
+							$(filter-out %/.babelrc.json, \
+								$(shell npx shx find source/**/*.*)))
+
+releasePath :=	$(sort \
+									$(patsubst source/%, release/%, \
+										$(sourcePath)))
+
 release/%: source/%
-	@shx echo $@
-	@eslint $<
-	@babel $< --out-file $@ --source-maps
+	@npx shx echo $@ ...
+	@npx eslint --fix $<
+	@npx babel $< --out-file $@ --source-maps
 
 build: $(releasePath)
-	@depcheck
+	@npx depcheck
 
 clean:
-	@shx rm -rf release
+	@npx shx rm -rf release
 
-run: build
+node: build
 	@node --no-warnings --unhandled-rejections=strict $(argument)
 
 test: build
-	@shx rm -rf coverage
-	@c8 ava $(argument)
+	@npx shx rm -rf coverage
+	@npx c8 ava $(argument)
 	@git add coverage release
-	@git commit --message="$(shell date)" --quiet
+	@git commit --message="post-test" --quiet
 
 push: clean test
 	@npm version prerelease

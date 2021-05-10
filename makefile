@@ -67,6 +67,6 @@ test: build
 	@git add coverage release
 	@git commit --message="post-test" --quiet
 
-push: clean test
+push: upgrade refresh clean test
 	@npm version prerelease
 	@git push origin master

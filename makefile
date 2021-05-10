@@ -35,8 +35,8 @@ refresh:
 	@npm install
 
 upgrade:
-	@npx npm-check-updates --upgrade
 	@npx shx rm -f package-lock.json
+	@npx npm-check-updates --upgrade
 	@npm install
 
 sourcePath :=	$(filter-out %/.eslintrc.json, \
@@ -64,7 +64,7 @@ node: build
 test: build
 	@npx shx rm -rf coverage
 	@npx c8 ava $(argument)
-	@git add coverage release
+	@git add coverage release package-lock.json
 	@git commit --message="post-test" --quiet
 
 push: upgrade refresh clean test

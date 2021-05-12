@@ -55,9 +55,9 @@
   "version": "0.0.2-26",
   "devDependencies": {
     "@babel/cli": "^7.13.16",
-    "@babel/core": "^7.14.0",
-    "@babel/eslint-parser": "^7.13.14",
-    "@babel/preset-env": "^7.14.1",
+    "@babel/core": "^7.14.2",
+    "@babel/eslint-parser": "^7.14.2",
+    "@babel/preset-env": "^7.14.2",
     "ava": "^3.15.0",
     "c8": "^7.7.2",
     "depcheck": "^1.4.1",

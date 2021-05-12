@@ -36,7 +36,7 @@ upgrade:
 	@npx npm-check-updates --upgrade
 	@npm install
 
-contentOf		 =	$(1) $(foreach i,$(wildcard $(1)/*),$(call contentOf,$(i)))
+contentOf		 =	$(1) $(foreach path,$(wildcard $(1)/*),$(call contentOf,$(path)))
 
 sourcePath	:=	$(call contentOf,source)
 releasePath :=	$(sort \

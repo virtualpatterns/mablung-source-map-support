@@ -23,12 +23,9 @@
 # "push:20": "git push origin master",
 # "push": "run-s --silent pre:push push:*"
 
-.PHONY: default debug refresh upgrade build clean run test push
+.PHONY: default debug refresh upgrade build clean node test release
 
 default: build
-
-debug:
-	@npx shx echo $(releasePath)
 
 refresh:
 	@-npx shx rm -rf node_modules package-lock.json
@@ -39,24 +36,27 @@ upgrade:
 	@npx npm-check-updates --upgrade
 	@npm install
 
-sourcePath :=	$(filter-out %/.eslintrc.json, \
-							$(filter-out %/.babelrc.json, \
-								$(shell npx shx find source/**/*.*)))
+contentOf		 =	$(1) $(foreach i,$(wildcard $(1)/*),$(call contentOf,$(i)))
 
+sourcePath	:=	$(call contentOf,source)
 releasePath :=	$(sort \
 									$(patsubst source/%, release/%, \
-										$(sourcePath)))
+										$(filter %.cjs %.js, \
+											$(sourcePath))))
 
 release/%: source/%
 	@npx shx echo $@ ...
 	@npx eslint --fix $<
 	@npx babel $< --out-file $@ --source-maps
 
+debug: 
+	@echo $(releasePath)
+
 build: $(releasePath)
 	@npx depcheck
 
 clean:
-	@npx shx rm -rf release
+	@npx shx rm -rf coverage release
 
 node: build
 	@node --no-warnings --unhandled-rejections=strict $(argument)
@@ -67,6 +67,6 @@ test: build
 	@git add coverage release package-lock.json
 	@git commit --message="post-test" --quiet
 
-push: upgrade refresh clean test
+release: upgrade refresh clean test
 	@npm version prerelease
 	@git push origin master

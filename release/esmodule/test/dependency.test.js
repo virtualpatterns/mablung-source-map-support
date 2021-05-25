@@ -13,8 +13,6 @@ Test('dependency', async (test) => {
 
 
 
-  // test.log(unused)
-
   test.deepEqual(unused.dependencies, []);
   test.deepEqual(unused.devDependencies, [
   '@babel/cli',

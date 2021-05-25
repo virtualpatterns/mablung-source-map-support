@@ -8,7 +8,7 @@ Test.before(async (test) => {
   'SourceMapSupport'
 ].forEach((name) => {
 
-  Test(name, async (test) => {
+  Test(name, (test) => {
     test.truthy(test.context.index[name])
   })
   

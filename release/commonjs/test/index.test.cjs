@@ -13,7 +13,7 @@ _ava.default.before(async test => {
 });
 
 ['SourceMapSupport'].forEach(name => {
-  (0, _ava.default)(name, async test => {
+  (0, _ava.default)(name, test => {
     test.truthy(test.context.index[name]);
   });
 });

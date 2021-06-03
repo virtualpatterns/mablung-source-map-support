@@ -1,6 +1,5 @@
 import Path from 'path'
 import Test from 'ava'
-// import URL from 'url'
 
 Test('Error(string)', (test) => {
 
@@ -14,7 +13,7 @@ Test('Error(string)', (test) => {
 
   test.log(`'${Path.relative('', errorPath)}' on line ${errorLineNumber}, column ${errorColumnNumber}`)
 
-  let filePath = __filename // URL.fileURLToPath(import.meta.url)
+  let filePath = __filename
   filePath = filePath.replace(/release/i, 'source')
 
   test.is(errorPath, filePath)

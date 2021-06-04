@@ -13,7 +13,11 @@ Test('dependency', async (test) => {
     '@virtualpatterns/mablung-makefile',
     'c8',
     'npm-check-updates',
-    'shx'] });
+    'shx'],
+
+    'parsers': {
+      '**/*.cjs': [Check.parser.es6, Check.parser.es7.default],
+      '**/*.js': [Check.parser.es6, Check.parser.es7.default] } });
 
 
 
@@ -22,7 +26,6 @@ Test('dependency', async (test) => {
 
   test.true(Is.emptyObject(unused.invalidDirs));
   test.true(Is.emptyObject(unused.invalidFiles));
-
   test.true(Is.emptyObject(unused.missing));
 
 });

@@ -36,7 +36,8 @@
     "./install": {
       "import": "./release/esmodule/install.js",
       "require": "./release/commonjs/install.cjs"
-    }
+    },
+    "./package.json": "./package.json"
   },
   "license": "GPL-3.0+",
   "main": "release/commonjs/index.cjs",

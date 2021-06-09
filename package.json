@@ -53,7 +53,7 @@
     "node": "run-s --silent \"node:10 argument='{@}'\" --"
   },
   "type": "module",
-  "version": "0.0.2-32",
+  "version": "0.0.2-33",
   "devDependencies": {
     "@babel/cli": "^7.14.3",
     "@babel/core": "^7.14.3",

@@ -1,6 +1,10 @@
 
-ifeq ($(origin projectPath),undefined)
-export projectPath := $(CURDIR)
+ifeq ($(origin project-path),undefined)
+export project-path := $(CURDIR)
 endif
 
-include $(projectPath)/node_modules/@virtualpatterns/mablung-makefile/makefile
+ifeq ($(origin mablung-makefile-path),undefined)
+export mablung-makefile-path := $(shell npx mablung-makefile-path)
+endif
+
+include $(mablung-makefile-path)

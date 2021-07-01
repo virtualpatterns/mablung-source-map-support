@@ -1,8 +1,14 @@
+import FileSystem from 'fs-extra'
 import Path from 'path'
-import Test from 'ava'
+import _Test from 'ava'
 import URL from 'url'
 
-Test('Error(string)', (test) => {
+const FilePath = URL.fileURLToPath(import.meta.url)
+const FileMapPath = `${FilePath}.map`
+
+const Test = FileSystem.pathExistsSync(FileMapPath) ? _Test : _Test.failing
+
+Test('Error(string)', async (test) => {
 
   let error = new Error('error')
 
@@ -10,13 +16,12 @@ Test('Error(string)', (test) => {
   let [, stackItem] = errorStack
 
   let pattern = /at (.+):(\d+):(\d+)/i
-  let [, errorPath, errorLineNumber, errorColumnNumber] = stackItem.match(pattern)
+  let [, errorPath /* , errorLineNumber, errorColumnNumber */] = stackItem.match(pattern)
 
-  test.log(`'${Path.relative('', errorPath)}' on line ${errorLineNumber}, column ${errorColumnNumber}`)
+  if (Test === _Test.failing) {
+    test.log(`The source map '${Path.relative('', FilePath)}.map' does not exist!`)
+  }
 
-  let filePath = URL.fileURLToPath(import.meta.url)
-  filePath = filePath.replace(/release/i, 'source')
-
-  test.is(errorPath, filePath)
+  test.is(errorPath, FilePath.replace(/release/i, 'source'))
 
 })

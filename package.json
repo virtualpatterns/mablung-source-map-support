@@ -38,6 +38,13 @@
     },
     "./package.json": "./package.json"
   },
+  "files": [
+    "/release/commonjs/index.cjs",
+    "/release/commonjs/install.cjs",
+    "/release/esmodule/index.js",
+    "/release/esmodule/install.js",
+    "/release/index.js"
+  ],
   "license": "GPL-3.0+",
   "main": "release/commonjs/index.cjs",
   "name": "@virtualpatterns/mablung-source-map-support",

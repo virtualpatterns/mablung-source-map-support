@@ -16,5 +16,3 @@ _index.SourceMapSupport.install({
     }
   }
 });
-
-//# sourceMappingURL=install.cjs.map

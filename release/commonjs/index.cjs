@@ -13,5 +13,3 @@ Object.defineProperty(exports, "SourceMapSupport", {
 var _sourceMapSupport = _interopRequireDefault(require("source-map-support"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-//# sourceMappingURL=index.cjs.map

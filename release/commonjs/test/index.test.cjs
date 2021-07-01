@@ -17,5 +17,3 @@ _ava.default.before(async test => {
     test.truthy(test.context.index[name]);
   });
 });
-
-//# sourceMappingURL=index.test.cjs.map

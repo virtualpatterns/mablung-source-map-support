@@ -25,5 +25,3 @@ Test('Error(string)', async (test) => {
   test.is(errorPath, FilePath.replace(/release/i, 'source'));
 
 });
-
-//# sourceMappingURL=install.test.js.map

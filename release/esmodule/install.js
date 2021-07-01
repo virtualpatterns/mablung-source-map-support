@@ -13,5 +13,3 @@ SourceMapSupport.install({
     }
 
   } });
-
-//# sourceMappingURL=install.js.map

@@ -56,7 +56,7 @@
     "test": "make test"
   },
   "type": "module",
-  "version": "0.0.2-43",
+  "version": "0.0.2-44",
   "dependencies": {
     "source-map-support": "^0.5.19"
   },

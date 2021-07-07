@@ -11,6 +11,7 @@ Test('dependency', async (test) => {
       '@babel/cli',
       '@babel/preset-env',
       '@virtualpatterns/mablung-makefile',
+      'babel-plugin-add-header-comment',
       'c8',
       'npm-check-updates',
       'shx'

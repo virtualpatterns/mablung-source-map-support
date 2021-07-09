@@ -52,7 +52,7 @@
     "test": "make test"
   },
   "type": "module",
-  "version": "0.0.2-48",
+  "version": "0.0.2-49",
   "dependencies": {
     "source-map-support": "^0.5.19"
   },

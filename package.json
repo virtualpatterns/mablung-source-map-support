@@ -62,7 +62,7 @@
     "@babel/eslint-parser": "^7.14.7",
     "@babel/preset-env": "^7.14.7",
     "@pwn/is": "^1.0.2",
-    "@virtualpatterns/mablung-makefile": "0.0.1-81",
+    "@virtualpatterns/mablung-makefile": "0.0.1-83",
     "ava": "^3.15.0",
     "c8": "^7.7.3",
     "depcheck": "^1.4.2",

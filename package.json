@@ -16,7 +16,7 @@
   },
   "babel": {
     "presets": [
-      "@virtualpatterns/mablung-makefile/babel-configuration"
+      "@virtualpatterns/mablung-makefile/babel"
     ]
   },
   "c8": {
@@ -29,7 +29,7 @@
   },
   "description": "TBD",
   "eslintConfig": {
-    "extends": "@virtualpatterns/mablung-makefile/eslint-configuration"
+    "extends": "@virtualpatterns/eslint-config-mablung"
   },
   "exports": {
     ".": {
@@ -56,9 +56,6 @@
     "type": "git",
     "url": "https://github.com/virtualpatterns/mablung-source-map-support"
   },
-  "scripts": {
-    "test": "make test"
-  },
   "type": "module",
   "version": "0.0.2-61",
   "dependencies": {
@@ -67,14 +64,9 @@
   "devDependencies": {
     "@babel/preset-env": "^7.14.7",
     "@pwn/is": "^1.0.2",
-    "@virtualpatterns/mablung-makefile": "../mablung-makefile",
-    "ava": "^3.15.0",
-    "c8": "^7.7.3",
+    "@virtualpatterns/eslint-config-mablung": "0.0.1-2",
+    "@virtualpatterns/mablung-makefile": "0.0.1-84",
     "depcheck": "^1.4.2",
-    "eslint": "^7.31.0",
-    "eslint-plugin-babel": "^5.3.1",
-    "fs-extra": "^10.0.0",
-    "npm-check-updates": "^11.8.3",
-    "shx": "^0.3.3"
+    "fs-extra": "^10.0.0"
   }
 }

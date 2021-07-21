@@ -8,13 +8,8 @@ Test('dependency', async (test) => {
 
   let unused = await Check(Process.cwd(), {
     'ignoreMatches': [
-      '@babel/cli',
       '@babel/preset-env',
-      '@virtualpatterns/mablung-makefile',
-      'babel-plugin-add-header-comment',
-      'c8',
-      'npm-check-updates',
-      'shx'
+      '@virtualpatterns/mablung-makefile'
     ],
     'parsers': {
       '**/*.cjs': [Check.parser.es6, Check.parser.es7.default],

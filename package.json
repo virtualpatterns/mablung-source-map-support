@@ -57,7 +57,7 @@
     "url": "https://github.com/virtualpatterns/mablung-source-map-support"
   },
   "type": "module",
-  "version": "0.0.2-61",
+  "version": "0.0.2-62",
   "dependencies": {
     "source-map-support": "^0.5.19"
   },

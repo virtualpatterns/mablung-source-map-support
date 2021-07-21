@@ -62,10 +62,10 @@
     "source-map-support": "^0.5.19"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-env": "^7.14.8",
     "@pwn/is": "^1.0.2",
     "@virtualpatterns/eslint-config-mablung": "0.0.1-2",
-    "@virtualpatterns/mablung-makefile": "0.0.1-84",
+    "@virtualpatterns/mablung-makefile": "0.0.1-85",
     "depcheck": "^1.4.2",
     "fs-extra": "^10.0.0"
   }

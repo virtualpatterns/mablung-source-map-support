@@ -1,5 +1,5 @@
 
-ifeq ($(origin mablung-makefile-path),undefined)
+ifndef mablung-makefile-path
 export mablung-makefile-path := $(shell npx mablung-makefile get-path)
 endif
 

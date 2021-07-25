@@ -1,5 +1,4 @@
 import Check from 'depcheck'
-import Is from '@pwn/is'
 import Test from 'ava'
 
 const Process = process
@@ -9,6 +8,7 @@ Test('dependency', async (test) => {
   let unused = await Check(Process.cwd(), {
     'ignoreMatches': [
       '@babel/preset-env',
+      '@virtualpatterns/babel-config-mablung-makefile',
       '@virtualpatterns/mablung-makefile'
     ],
     'parsers': {
@@ -20,8 +20,9 @@ Test('dependency', async (test) => {
   test.deepEqual(unused.dependencies, [])
   test.deepEqual(unused.devDependencies, [])
 
-  test.true(Is.emptyObject(unused.invalidDirs))
-  test.true(Is.emptyObject(unused.invalidFiles))
-  test.true(Is.emptyObject(unused.missing))
+  test.deepEqual(unused.missing, {})
+
+  test.deepEqual(unused.invalidDirs, {})
+  test.deepEqual(unused.invalidFiles, {})
 
 })

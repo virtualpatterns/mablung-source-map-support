@@ -16,7 +16,7 @@
   },
   "babel": {
     "presets": [
-      "module:@virtualpatterns/babel-config-mablung-makefile"
+      "@virtualpatterns/babel-preset-mablung-makefile"
     ]
   },
   "c8": {
@@ -63,7 +63,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.14.8",
-    "@virtualpatterns/babel-config-mablung-makefile": "0.0.1-4",
+    "@virtualpatterns/babel-preset-mablung-makefile": "0.0.1-1",
     "@virtualpatterns/eslint-config-mablung-makefile": "0.0.1-12",
     "@virtualpatterns/mablung-makefile": "0.0.1-93",
     "ava": "^3.15.0",

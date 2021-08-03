@@ -21,7 +21,9 @@
   },
   "c8": {
     "all": true,
-    "exclude": [],
+    "exclude": [
+      "release/header"
+    ],
     "reporter": [
       "html"
     ],
@@ -62,7 +64,6 @@
     "source-map-support": "^0.5.19"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.14.8",
     "@virtualpatterns/babel-preset-mablung-makefile": "0.0.1-1",
     "@virtualpatterns/eslint-config-mablung-makefile": "0.0.1-12",
     "@virtualpatterns/mablung-makefile": "0.0.1-93",

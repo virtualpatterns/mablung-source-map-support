@@ -21,7 +21,8 @@
         {
           "header": {
             "exclude": [
-              "source/**/test/**/*",
+              "source/**/sandbox/**/*",
+              "source/**/test/**/*.test.*",
               "source/index.js"
             ]
           }
@@ -32,6 +33,7 @@
   "c8": {
     "all": true,
     "exclude": [
+      "release/esmodule/sandbox",
       "release/header"
     ],
     "reporter": [
@@ -55,11 +57,10 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "/release/commonjs/index.cjs",
-    "/release/commonjs/install.cjs",
-    "/release/esmodule/index.js",
-    "/release/esmodule/install.js",
-    "/release/index.js"
+    "release/commonjs/index.cjs",
+    "release/commonjs/install.cjs",
+    "release/esmodule/index.js",
+    "release/esmodule/install.js"
   ],
   "license": "GPL-3.0+",
   "main": "release/commonjs/index.cjs",
@@ -74,9 +75,9 @@
     "source-map-support": "^0.5.19"
   },
   "devDependencies": {
-    "@virtualpatterns/babel-preset-mablung-makefile": "0.0.9",
-    "@virtualpatterns/eslint-config-mablung-makefile": "0.0.7",
-    "@virtualpatterns/mablung-makefile": "0.0.18",
+    "@virtualpatterns/babel-preset-mablung-makefile": "0.0.10",
+    "@virtualpatterns/eslint-config-mablung-makefile": "0.0.10",
+    "@virtualpatterns/mablung-makefile": "0.0.19",
     "ava": "^3.15.0",
     "depcheck": "^1.4.2",
     "fs-extra": "^10.0.0"

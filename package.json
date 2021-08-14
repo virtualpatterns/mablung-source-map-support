@@ -22,7 +22,7 @@
           "header": {
             "exclude": [
               "source/**/sandbox",
-              "source/**/test/",
+              "source/**/test",
               "source/index.js"
             ]
           }

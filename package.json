@@ -1,50 +1,6 @@
 {
   "author": "virtualpatterns.com <code@virtualpatterns.com> (http://www.virtualpatterns.com)",
-  "ava": {
-    "failFast": true,
-    "files": [
-      "release/**/test/**/*.test.*"
-    ],
-    "nodeArguments": [
-      "--no-warnings",
-      "--unhandled-rejections=strict"
-    ],
-    "require": [
-      "./release/esmodule/install.js"
-    ],
-    "verbose": true
-  },
-  "babel": {
-    "presets": [
-      [
-        "@virtualpatterns/babel-preset-mablung-makefile",
-        {
-          "header": {
-            "exclude": [
-              "source/**/sandbox",
-              "source/**/test",
-              "source/index.js"
-            ]
-          }
-        }
-      ]
-    ]
-  },
-  "c8": {
-    "all": true,
-    "exclude": [
-      "release/esmodule/sandbox",
-      "release/header"
-    ],
-    "reporter": [
-      "html"
-    ],
-    "src": "release"
-  },
   "description": "TBD",
-  "eslintConfig": {
-    "extends": "@virtualpatterns/eslint-config-mablung-makefile"
-  },
   "exports": {
     ".": {
       "import": "./release/esmodule/index.js",
@@ -75,9 +31,9 @@
     "source-map-support": "^0.5.19"
   },
   "devDependencies": {
-    "@virtualpatterns/babel-preset-mablung-makefile": "0.0.1",
-    "@virtualpatterns/eslint-config-mablung-makefile": "0.0.1",
-    "@virtualpatterns/mablung-makefile": "0.0.1",
+    "@virtualpatterns/babel-preset-mablung-makefile": "0.0.26-5",
+    "@virtualpatterns/eslint-config-mablung-makefile": "0.0.26-5",
+    "@virtualpatterns/mablung-makefile": "0.0.26-15",
     "ava": "^3.15.0",
     "depcheck": "^1.4.2",
     "fs-extra": "^10.0.0"

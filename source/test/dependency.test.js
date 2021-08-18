@@ -7,8 +7,9 @@ Test('(default)', async (test) => {
 
   let unused = await Check(Process.cwd(), {
     'ignoreMatches': [
-      '@virtualpatterns/babel-config-mablung-makefile',
-      '@virtualpatterns/mablung-makefile'
+      '@babel/eslint-parser',
+      '@virtualpatterns/babel-preset-mablung-makefile',
+      'eslint-plugin-babel'
     ],
     'parsers': {
       '**/*.cjs': [Check.parser.es6, Check.parser.es7.default],

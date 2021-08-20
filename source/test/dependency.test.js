@@ -17,7 +17,7 @@ Test('(default)', async (test) => {
     }
   })
 
-  test.log(unused.using)
+  // test.log(unused.using)
 
   test.deepEqual(unused.dependencies, [])
   test.deepEqual(unused.devDependencies, [])

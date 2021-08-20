@@ -7,15 +7,17 @@ Test('(default)', async (test) => {
 
   let unused = await Check(Process.cwd(), {
     'ignoreMatches': [
-      '@babel/eslint-parser',
-      '@virtualpatterns/babel-preset-mablung-makefile',
-      'eslint-plugin-babel'
+      '@virtualpatterns/babel-preset-mablung-makefile'
     ],
     'parsers': {
-      '**/*.cjs': [Check.parser.es6, Check.parser.es7.default],
-      '**/*.js': [Check.parser.es6, Check.parser.es7.default]
+      '**/*.cjs': [ Check.parser.es6 ],
+      '**/*.js': [ Check.parser.es6 ]
+      // '**/*.cjs': [ Check.parser.es6, Check.parser.es7.default ],
+      // '**/*.js': [ Check.parser.es6, Check.parser.es7.default ]
     }
   })
+
+  test.log(unused.using)
 
   test.deepEqual(unused.dependencies, [])
   test.deepEqual(unused.devDependencies, [])

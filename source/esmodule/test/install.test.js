@@ -20,7 +20,7 @@ Test('Error(string)', async (test) => {
   let [, errorPath /* , errorLineNumber, errorColumnNumber */] = stackItem.match(pattern)
 
   /* c8 ignore next 3 */
-  if (!FileSystem.pathExistsSync(FileMapPath)) {
+  if (!(await FileSystem.pathExists(FileMapPath))) {
     test.log(`The source map '${Path.relative('', FileMapPath)}' does not exist!`)
   }
 

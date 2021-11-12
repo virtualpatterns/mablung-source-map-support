@@ -34,6 +34,7 @@
     "@virtualpatterns/babel-preset-mablung-makefile": "0.0.26-51",
     "@virtualpatterns/eslint-config-mablung-makefile": "0.0.26-49",
     "@virtualpatterns/mablung-makefile": "0.0.26-118",
+    "@virtualpatterns/mablung-worker": "^0.0.2-99",
     "ava": "^3.15.0",
     "depcheck": "^1.4.2",
     "fs-extra": "^10.0.0"

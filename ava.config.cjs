@@ -5,9 +5,7 @@ module.exports = function({ path }) {
     'files': [
       'release/**/test/**/*.test.*'
     ],
-    'require': [
-      './release/esmodule/install.js'
-    ],
+    'require': [],
     'verbose': true
   }
 

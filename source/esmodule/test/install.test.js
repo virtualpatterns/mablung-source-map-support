@@ -1,12 +1,9 @@
-import BaseTest from 'ava'
 import FileSystem from 'fs-extra'
+import Test from 'ava'
 import URL from 'url'
 
 const FilePath = URL.fileURLToPath(import.meta.url)
 const FileMapPath = `${FilePath}.map`
-
-/* c8 ignore next 1 */
-const Test = FileSystem.pathExistsSync(FileMapPath) ? BaseTest : BaseTest.skip
 
 Test('Error(string)', async (test) => {
 
@@ -18,6 +15,6 @@ Test('Error(string)', async (test) => {
   let pattern = /at (.+):(\d+):(\d+)/i
   let [, errorPath /* , errorLineNumber, errorColumnNumber */] = stackItem.match(pattern)
 
-  test.is(errorPath, FilePath.replace(/release/i, 'source'))
+  ;(FileSystem.pathExistsSync(FileMapPath) ? test.is : test.is.skip)(errorPath, FilePath.replace(/release/i, 'source'))
 
 })

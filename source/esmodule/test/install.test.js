@@ -37,7 +37,9 @@ Test('@virtualpatterns/mablung-source-map-support/install', async (test) => {
     let pattern = /at Function.createError \((.+):(\d+):(\d+)\)/i
     let [ , path ] = item.match(pattern)
 
-    ;(FileSystem.pathExistsSync(WorkerMapPath) ? test.is : test.is.skip)(path, WorkerPath.replace('release', 'source'))
+    if (!FileSystem.pathExistsSync(WorkerMapPath)) { test.log(`'${Path.relative('', WorkerMapPath)}' does not exist!`) }
+    
+    (FileSystem.pathExistsSync(WorkerMapPath) ? test.is : test.is.skip)(path, WorkerPath.replace('release', 'source'))
 
   } finally {
     await client.exit()

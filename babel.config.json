@@ -7,7 +7,6 @@
           "exclude": [
             "source/**/test",
             "source/**/sandbox",
-            "source/header",
             "source/index.js"
           ]
         }

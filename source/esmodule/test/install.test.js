@@ -19,7 +19,7 @@ Test.before(async () => {
   return FileSystem.remove(LogPath)
 })
 
-Test('@virtualpatterns/mablung-source-map-support/install', async (test) => {
+;(FileSystem.pathExistsSync(WorkerMapPath) ? Test : Test.skip)('Error#stack', async (test) => {
 
   let client = new LoggedClient(WorkerPath)
 
@@ -29,20 +29,30 @@ Test('@virtualpatterns/mablung-source-map-support/install', async (test) => {
 
     let error = await client.worker.createError()
 
-    // test.log(error.stack)
-
     let stack = error.stack.split('\n')
     let [ , item ] = stack
 
-    let pattern = /at Function.createError \((.+):(\d+):(\d+)\)/i
+    let pattern = /at Function.createError \((.+):\d+:\d+\)/i
     let [ , path ] = item.match(pattern)
-
-    if (!FileSystem.pathExistsSync(WorkerMapPath)) { test.log(`'${Path.relative('', WorkerMapPath)}' does not exist!`) }
     
-    (FileSystem.pathExistsSync(WorkerMapPath) ? test.is : test.is.skip)(path, WorkerPath.replace('release', 'source'))
+    test.is(path, URL.pathToFileURL(WorkerPath.replace('/release/', '/source/')).href)
 
   } finally {
     await client.exit()
+  }
+
+})
+
+Test('handleUncaughtExceptions', async (test) => {
+
+  let client = new LoggedClient(WorkerPath)
+
+  await client.whenReady()
+
+  try {
+    await client.worker.throwError()
+  } finally {
+    test.is(await client.whenExit(), 1)
   }
 
 })

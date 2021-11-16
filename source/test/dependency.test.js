@@ -8,6 +8,7 @@ Test('default', async (test) => {
   let unused = await Check(Process.cwd(), {
     'ignoreMatches': [
       '@virtualpatterns/babel-preset-mablung-makefile',
+      '@virtualpatterns/eslint-config-mablung-makefile',
       '@virtualpatterns/mablung-makefile',
       '@virtualpatterns/mablung-source-map-support'
     ],
@@ -28,5 +29,5 @@ Test('default', async (test) => {
 
   test.deepEqual(unused.invalidDirs, {})
   test.deepEqual(unused.invalidFiles, {})
-
+  
 })

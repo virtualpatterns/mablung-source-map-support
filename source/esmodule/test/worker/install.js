@@ -8,6 +8,10 @@ class Worker {
     return new Error()
   }
 
+  static throwError() {
+    setImmediate(() => { throw new Error() })
+  }
+
 }
 
 WorkerServer.start(Worker)

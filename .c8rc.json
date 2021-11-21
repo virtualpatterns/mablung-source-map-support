@@ -2,7 +2,6 @@
   "all": true,
   "exclude": [
     "release/esmodule/sandbox",
-    "release/header",
     "ava.config.cjs"
   ],
   "reporter": [

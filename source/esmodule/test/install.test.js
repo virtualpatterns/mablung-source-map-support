@@ -11,7 +11,7 @@ const Require = CreateRequire(import.meta.url)
 
 const LogPath = FilePath.replace('/release/', '/data/').replace('.test.js', '.log')
 const LoggedClient = CreateLoggedProcess(WorkerClient, LogPath)
-const WorkerPath = Require.resolve('./worker/install.js')
+const WorkerPath = Path.resolve(FolderPath, './worker/install.js')
 const WorkerMapPath = `${WorkerPath}.map`
 
 Test.before(async () => {

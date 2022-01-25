@@ -7,11 +7,11 @@ import Test from 'ava'
 import URL from 'url'
 
 const FilePath = URL.fileURLToPath(import.meta.url)
-const Require = CreateRequire(import.meta.url)
+const FolderPath = Path.dirname(FilePath)
 
 const LogPath = FilePath.replace('/release/', '/data/').replace('.test.js', '.log')
 const LoggedClient = CreateLoggedProcess(WorkerClient, LogPath)
-const WorkerPath = Path.resolve(FolderPath, './worker/install.js')
+const WorkerPath = Path.resolve(FolderPath, 'worker/install.js')
 const WorkerMapPath = `${WorkerPath}.map`
 
 Test.before(async () => {

@@ -5,11 +5,11 @@ import Path from 'path'
 import Test from 'ava'
 
 const FilePath = __filename
-const Require = require
+const FolderPath = __dirname
 
 const LogPath = FilePath.replace('/release/', '/data/').replace('.test.cjs', '.log')
 const LoggedClient = CreateLoggedProcess(WorkerClient, LogPath)
-const WorkerPath = Require.resolve('./worker/install.cjs')
+const WorkerPath = Path.resolve(FolderPath, 'worker/install.cjs')
 const WorkerMapPath = `${WorkerPath}.map`
 
 Test.before(async () => {

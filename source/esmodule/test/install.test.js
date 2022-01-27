@@ -1,5 +1,4 @@
 import { CreateLoggedProcess } from '@virtualpatterns/mablung-worker/test'
-import { createRequire as CreateRequire } from 'module'
 import { WorkerClient } from '@virtualpatterns/mablung-worker'
 import FileSystem from 'fs-extra'
 import Path from 'path'

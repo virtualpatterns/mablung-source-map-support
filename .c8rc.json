@@ -2,7 +2,7 @@
   "all": true,
   "exclude": [
     "release/esmodule/sandbox",
-    "ava.config.cjs"
+    "ava.config.js"
   ],
   "reportDir": "data/c8", 
   "reporter": [
